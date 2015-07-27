@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc">
+    <target name="javadoc">
+        <javadoc access="public" author="true" classpath="C:\java\tomcat\common\lib\commons-el.jar;C:\java\tomcat\common\lib\jsp-api.jar;C:\java\tomcat\common\lib\jasper-runtime.jar;C:\java\tomcat\common\lib\jasper-compiler-jdt.jar;../WebContent/WEB-INF/lib/dwr.jar;C:\java\tomcat\common\lib\naming-resources.jar;../WebContent/WEB-INF/lib/commons-logging-adapters-1.1.1.jar;../WebContent/WEB-INF/classes;C:\java\tomcat\common\lib\naming-factory-dbcp.jar;../WebContent/WEB-INF/lib/commons-logging-api-1.1.1.jar;../WebContent/WEB-INF/lib/commons-logging-1.1.1.jar;C:\java\tomcat\common\lib\naming-factory.jar;C:\java\tomcat\common\lib\servlet-api.jar;../WebContent/WEB-INF/lib/WebDice-1.0.jar;C:\java\tomcat\common\lib\jasper-compiler.jar" destdir="javadoc" doctitle="WebDice Javadoc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="org.webdice.ajax" source="1.6" sourcepath="../src" splitindex="true" use="true" version="true"/>
+    </target>
+</project>

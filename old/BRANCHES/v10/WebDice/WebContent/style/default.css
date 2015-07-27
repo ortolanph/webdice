@@ -1,0 +1,107 @@
+@CHARSET "ISO-8859-1";
+
+td
+	{
+		font-family: "Lucida Sans Unicode";
+		font-size: 10pt;
+	}
+
+td.required
+	{
+		font-weight: bold;
+		color: Red;
+	}
+
+input
+	{
+		font-family: "Lucida Sans Unicode";
+		font-size: 10pt;
+	}
+
+input.required 
+	{
+		font-weight: bold;
+		color: Navy;
+	}
+	
+input.submit 
+	{
+		background-color: #ccffff;
+		border-width: medium;
+		border-style: solid;
+		font-family: "Lucida Sans Unicode";
+		font-weight: bold;
+		font-size: 10pt;
+	}
+	
+code
+	{
+		font-weight: bold;
+		color: Navy;
+	}
+	
+legend
+	{
+		font-family: "Lucida Sans Unicode";
+		font-weight: bold;
+		font-size: 12pt;
+	}
+
+div
+	{
+		font-family: "Trebuchet MS";
+		font-size: 10pt;
+		font-weight: bold;
+	}
+
+div.info
+	{
+		background-color: Blue;
+		color: Yellow;
+	}
+	
+div.noData
+	{
+		background-color: Yellow;
+		color: Red;
+	}
+	
+div.warning
+	{
+		background-color: Red;
+		color: Black;
+	}
+	
+li
+	{
+		font-family: "Trebuchet MS";
+		font-size: 10pt;
+	}
+
+h2
+	{
+		font-family: "Trebuchet MS";
+		font-weight: bold;
+		font-size: 16pt;
+	}
+	
+h3
+	{
+		font-family: "Trebuchet MS";
+		font-weight: bold;
+		font-size: 12pt;
+	}
+	
+hr
+	{
+		color: blue;
+	}
+	
+tr.header
+	{
+		background-color: gray;
+		color: white;
+		font-family: "Trebuchet MS";
+		font-weight: bold;
+		font-size: 12pt;
+	}

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     20/04/2010 21:46:12                                                        
+
+     WebDice    
+     A DWR (Ajax) project for dice rolling
+                   
+     PauloCPT01                                                                
+     ====================================================================== -->
+<project name="WebDice" default="default">
+    <description>
+            A DWR (Ajax) project for dice rolling
+    </description>
+	
+	<property name="build"      value="buildStdAlone"              />
+	<property name="dist"       value="distStdAlone"               />
+	<property name="src"        value="src"                        />
+	<property name="doc"        value="docs"                       />
+	<property name="lib"        value="WebContent/WEB-INF/lib"     />
+	<property name="dwr_xml"    value="WebContent/WEB-INF/dwr.xml" />
+	<property name="classes"    value="WebContent/WEB-INF/classes" />
+	<property name="version"    value="1.2"                        />
+	<property name="oldVersion" value="1.1"                        />
+	
+    <!-- ================================= 
+          target: default - Starts the build
+         ================================= -->
+    <target name="default" description="A DWR (Ajax) project for dice rolling">
+    	<echo message="-----------------------------------------------------------------------------" />
+    	<echo message="1. Cleaning Structures" />
+        <antcall target="clean"></antcall>
+    	<echo message="-----------------------------------------------------------------------------" />
+        <echo message="2. Creating Structures" />
+        <antcall target="recreate"></antcall>
+    	<echo message="-----------------------------------------------------------------------------" />
+    	<echo message="3. Compiling" />
+        <antcall target="compile"></antcall>
+    	<echo message="-----------------------------------------------------------------------------" />
+    	<echo message="4. Packing the classes" />
+        <antcall target="jar"></antcall>
+    	<echo message="-----------------------------------------------------------------------------" />
+    	<echo message="5. Creating the sample Application" />
+        <antcall target="war"></antcall>
+    	<echo message="-----------------------------------------------------------------------------" />
+    	<echo message="6. Creating a packed Application" />
+        <antcall target="pack"></antcall>
+    	<echo message="-----------------------------------------------------------------------------" />
+    </target>
+
+	<!-- ================================= 
+          target: clean - Cleans the result of the latest build
+         ================================= -->
+    <target name="clean">
+		<delete dir="${build}" />
+    	<delete dir="${dist}" />
+    	<delete dir="${classes}" />
+    	<delete file="WebDice-${oldVersion}.zip" />
+    </target>
+	
+	<!-- ================================= 
+          target: recreate - Recreates all the directories built
+         ================================= -->
+    <target name="recreate">
+    	<mkdir dir="${build}"/>
+    	<mkdir dir="${dist}"/>
+    	<mkdir dir="${dist}/lib" />  <!-- place to put the jar generated on buildStdAlone -->
+    	<mkdir dir="${dist}/dwr" />  <!-- place to put the dwr sample on this project -->
+    	<mkdir dir="${dist}/war" />  <!-- place to put the generated war file of this project sample -->
+    	<mkdir dir="${classes}"  />
+    	
+		<copy todir="${dist}">
+			<fileset dir="${doc}"/>
+		</copy>
+    	
+		<copy todir="${dist}/dwr" file="${dwr_xml}" />
+    </target>
+	
+    <!-- ================================= 
+          target: compile - Compiles the source directory
+         ================================= -->
+    <target name="compile">
+        <javac srcdir="${src}"
+         destdir="${build}"
+         debug="on"
+         verbose="true">
+        	<exclude name="**/package-info.java"/>
+        </javac>
+    </target>
+	
+    <!-- ================================= 
+          target: jar - Creates the jar file containing the rules of the Dice Rolling
+         ================================= -->
+	<target name="jar">
+        <jar destfile="${dist}/lib/WebDice-${version}.jar" basedir="${build}" />
+	</target>
+	
+	<target name="war">
+<!--        <javac srcdir="${src}"
+         destdir="${classes}"
+         debug="on"
+         verbose="true">
+        </javac> -->
+		
+		<copy todir="${lib}" file="${dist}/lib/WebDice-${version}.jar" />
+		
+		<war destfile="${dist}/war/WebDiceApp.war" basedir="WebContent"></war>
+	</target>
+
+	<target name="pack">
+		<zip destfile="WebDice-${version}.zip" basedir="${dist}"/>
+	</target>
+	
+</project>

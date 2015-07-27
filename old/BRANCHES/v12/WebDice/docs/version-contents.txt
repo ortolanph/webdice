@@ -1,0 +1,34 @@
+This version contains:
+
+1. This file
+2. Added fields to store the partial results on rolling dices
+    private int[] faces
+    private int[][] partialResults
+    
+    E.G.
+    A. If a d4 was rolled once, then it will return:
+    
+    faces[] = { 4 }
+    partialResults[] = [0]{ 3 };
+    
+    B. If a d8 was rolled by 7 times, then it will return:
+    
+    faces[] = { 8 }
+    partialResults[] = [0]{ 6, 8, 7, 2, 3, 7, 1 }
+    
+    C. If a dice cup was rolled once, containing a d12, a d10 and a d20, then it will return:
+    
+    faces[] = { 12, 10, 20 }
+    partialResults[] = [0]{ 8 }, 
+    				   [1]{ 4 }, 
+    				   [2]{ 13 }
+    
+    D. If a dice cup was rolled multiple times (7), containing a d4, d6, d12 and d20, then it will return:
+    
+    faces[] = { 4, 6 , 12, 20 }
+    partialResults[] = [0]{  4,  3,  3,  2,  4,  1,  2 }, 
+                       [1]{  5,  6,  1,  5,  4,  2,  3 }, 
+                       [2]{  9,  5, 12,  7,  8,  2, 10 }, 
+                       [3]{ 17, 14,  2,  8, 19,  6, 12 }
+                       
+3. Added the second item on html page
