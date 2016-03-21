@@ -7,6 +7,7 @@
     <groupId>org.webdice</groupId>
     <artifactId>webdice-core</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>Web-dice Core Project</name>
 
     <dependencies>
         <dependency>
